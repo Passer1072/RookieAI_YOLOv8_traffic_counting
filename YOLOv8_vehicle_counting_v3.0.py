@@ -19,7 +19,7 @@ buffer_tracks = {}  # 保存位置和时间的元组
 crossed_boxes = {}  # 用于存储每个框的交叉状态的字典
 identification_range = 30  # 连续框判断误差（像素）
 
-max_track_length = 35  # 最大轨迹长度
+max_track_length = 30  # 最大轨迹长度
 track_timeout = 2  # 轨迹超时时间（秒）
 
 unupdated_timeout = 0.1  # 未更新的轨迹存在时间（秒）
@@ -29,7 +29,7 @@ target_fps = 40  # 目标帧速率
 frame_time = 1.0 / target_fps  # 每帧的时间间隔
 
 
-def calculate_identification_range(y, frame_height, min_range=5, max_range=80):
+def calculate_identification_range(y, frame_height, min_range=5, max_range=70):
     """
     根据 y 坐标动态计算识别范围。
     y: 车辆中心的 y 坐标
